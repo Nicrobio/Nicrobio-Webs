@@ -42,12 +42,6 @@
       min-height: 82px; border-bottom: 1px solid var(--line);
     }
     .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: -.04em; }
-    .brand-mark {
-      width: 35px; height: 35px; display: grid; place-items: center;
-      border: 1px solid rgba(255,0,157,.55); border-radius: 11px;
-      color: var(--pink); background: rgba(255,0,157,.08); font: 500 13px var(--mono);
-      box-shadow: 0 0 28px rgba(255,0,157,.12);
-    }
     nav { display: flex; gap: 27px; align-items: center; }
     nav a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s; }
     nav a:hover { color: var(--ink); }
@@ -97,8 +91,8 @@
     .visual-asoluxia:before { background: var(--pink); }
     .visual-petalos { background: linear-gradient(130deg,#1c080e,#661b2a); }
     .visual-petalos:before { background: #db435d; }
-    .visual-tres { background: linear-gradient(130deg,#171326,#31254b); }
-    .visual-tres:before { background: #b9a1fa; }
+    .visual-cassettes { background: linear-gradient(130deg,#120b2e,#3a1166); }
+    .visual-cassettes:before { background: #22e4ff; }
     .visual-word { position: relative; z-index: 1; font-size: clamp(27px, 4vw, 43px); font-weight: 800; letter-spacing: -.08em; text-shadow: 0 4px 25px rgba(0,0,0,.4); }
     .visual-word small { display: block; text-align: center; font: 10px var(--mono); letter-spacing: .15em; text-transform: uppercase; opacity: .78; }
     .project-body { display: flex; flex: 1; flex-direction: column; padding: 22px 23px 21px; }
@@ -155,7 +149,7 @@
 <body>
   <header class="wrap topbar">
     <a class="brand" href="#inicio" aria-label="Nicolás Gómez, inicio">
-      <span class="brand-mark">NG</span><span>Nicolás Gómez</span>
+      <span>Nicolás Gómez</span>
     </a>
     <nav aria-label="Navegación principal">
       <a href="#proyectos">Proyectos</a>
@@ -214,7 +208,7 @@
           </article>
 
           <article class="project">
-            <div class="project-visual visual-petalos"><div class="visual-word">Pétalos<small>de Carne · Tickets</small></div></div>
+            <div class="project-visual visual-petalos"><div class="visual-word">Pétalos de Carne<small>Tickets</small></div></div>
             <div class="project-body">
               <div class="project-top"><span class="project-type">Landing interactiva</span><span class="project-index">03</span></div>
               <h3>Pétalos de Carne — Boletas</h3>
@@ -226,13 +220,14 @@
           </article>
 
           <article class="project">
-            <div class="project-visual visual-tres"><div class="visual-word">tres en tres<small>Segunda edición</small></div></div>
+            <div class="project-visual visual-cassettes"><div class="visual-word">Cassettes<small>Nicrobio</small></div></div>
             <div class="project-body">
-              <div class="project-top"><span class="project-type">Experiencia interactiva</span><span class="project-index">04</span></div>
-              <h3>tres en tres</h3>
-              <p>Cuestionario interactivo de 16 preguntas que recomienda un plan según las respuestas. Incluye firma en pantalla, controles táctiles y una visualización 3D.</p>
-              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Canvas</span><span class="tag">Three.js</span><span class="tag">Interacción</span></div>
-              <a class="project-link" href="tres-en-tres.html" target="_blank" rel="noopener noreferrer">Abrir proyecto <span>↗</span></a>
+              <div class="project-top"><span class="project-type">Tienda conceptual</span><span class="project-index">04</span></div>
+              <h3>Cassettes Nicrobio</h3>
+              <p>Tienda conceptual de cassettes hechos a mano, con modelos 3D que se giran con el mouse o el dedo, reproductor de Spotify integrado y carrito que arma el pedido para enviarlo por DM.</p>
+              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">Spotify</span><span class="tag">Carrito</span></div>
+              <a class="project-link" href="cassettes_nicrobio.html" target="_blank" rel="noopener noreferrer">Abrir proyecto <span>↗</span></a>
+              <small class="demo-note">Proyecto conceptual; no procesa pagos reales.</small>
             </div>
           </article>
         </div>
