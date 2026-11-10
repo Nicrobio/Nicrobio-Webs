@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090d">
+  <meta name="description" content="Portafolio de Nicolás Gómez: desarrollo web, sitios corporativos e interfaces interactivas.">
+  <title>Nicolás Gómez — Portafolio web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09090d;
+      --panel: #111118;
+      --panel-2: #171720;
+      --ink: #f3f0f5;
+      --muted: #aaa4b2;
+      --line: rgba(255,255,255,.105);
+      --pink: #ff009d;
+      --lilac: #ad83ff;
+      --mint: #9fe6d0;
+      --mono: "DM Mono", ui-monospace, monospace;
+      --sans: "Manrope", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 85% 9%, rgba(255,0,157,.12), transparent 30rem),
+        radial-gradient(ellipse at 4% 42%, rgba(173,131,255,.08), transparent 27rem),
+        var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 var(--sans);
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 82px; border-bottom: 1px solid var(--line);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: -.04em; }
+    .brand-mark {
+      width: 35px; height: 35px; display: grid; place-items: center;
+      border: 1px solid rgba(255,0,157,.55); border-radius: 11px;
+      color: var(--pink); background: rgba(255,0,157,.08); font: 500 13px var(--mono);
+      box-shadow: 0 0 28px rgba(255,0,157,.12);
+    }
+    nav { display: flex; gap: 27px; align-items: center; }
+    nav a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s; }
+    nav a:hover { color: var(--ink); }
+    .nav-github { padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); }
+    .hero { position: relative; padding: 112px 0 104px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(250px,.7fr); gap: 54px; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--pink); font: 11px var(--mono); letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 24px; height: 1px; background: currentColor; }
+    h1 { max-width: 760px; margin: 24px 0 22px; font-size: clamp(45px, 7.4vw, 83px); line-height: .99; letter-spacing: -.075em; font-weight: 700; }
+    h1 span { color: var(--pink); }
+    .hero-copy { max-width: 635px; color: #c3bdc9; font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 47px; padding: 0 19px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 800; transition: transform .2s, border-color .2s, background .2s; }
+    .button:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.35); }
+    .button.primary { border-color: var(--pink); background: var(--pink); color: #180812; }
+    .button.primary:hover { background: #ff35b3; }
+    .hero-art { position: relative; min-height: 310px; display: grid; place-items: center; }
+    .orb {
+      width: min(290px, 72vw); aspect-ratio: 1; border-radius: 50%; position: relative;
+      background: radial-gradient(circle at 31% 27%, #ffb1e1 0 3%, #ff009d 18%, #7923a4 50%, #17101f 74%);
+      box-shadow: inset -25px -28px 50px rgba(0,0,0,.5), 0 0 90px rgba(255,0,157,.22);
+      animation: float 7s ease-in-out infinite;
+    }
+    .orb:before, .orb:after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; inset: -25px 20px 25px -20px; transform: rotate(-24deg); }
+    .orb:after { inset: 22px -30px -18px 27px; transform: rotate(49deg); border-color: rgba(173,131,255,.55); }
+    .orb-label { position: absolute; right: -2px; bottom: 19px; padding: 12px 15px; border: 1px solid var(--line); border-radius: 12px; background: rgba(17,17,24,.86); backdrop-filter: blur(10px); font: 11px/1.7 var(--mono); color: var(--muted); }
+    .orb-label strong { display: block; color: var(--ink); font: 700 13px var(--sans); }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-13px) rotate(4deg); } }
+    .section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 22px; margin-bottom: 32px; }
+    .section-kicker { margin: 0 0 8px; color: var(--pink); font: 11px var(--mono); letter-spacing: .13em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(32px, 4.5vw, 48px); line-height: 1.05; letter-spacing: -.06em; }
+    .section-note { max-width: 350px; margin: 0; color: var(--muted); font-size: 13px; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 17px; }
+    .project {
+      min-width: 0; overflow: hidden; display: flex; flex-direction: column;
+      min-height: 365px; border: 1px solid var(--line); border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+    .project:hover { transform: translateY(-5px); border-color: rgba(255,0,157,.38); background: linear-gradient(145deg, rgba(255,0,157,.065), rgba(255,255,255,.015)); }
+    .project-visual { position: relative; height: 148px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--line); }
+    .project-visual:before { content: ""; position: absolute; width: 240px; height: 160px; border-radius: 50%; filter: blur(34px); opacity: .38; }
+    .visual-judicial { background: linear-gradient(130deg,#171b26,#252b3b); }
+    .visual-judicial:before { background: #b79a6a; }
+    .visual-asoluxia { background: linear-gradient(130deg,#181321,#2d1530); }
+    .visual-asoluxia:before { background: var(--pink); }
+    .visual-petalos { background: linear-gradient(130deg,#1c080e,#661b2a); }
+    .visual-petalos:before { background: #db435d; }
+    .visual-tres { background: linear-gradient(130deg,#171326,#31254b); }
+    .visual-tres:before { background: #b9a1fa; }
+    .visual-word { position: relative; z-index: 1; font-size: clamp(27px, 4vw, 43px); font-weight: 800; letter-spacing: -.08em; text-shadow: 0 4px 25px rgba(0,0,0,.4); }
+    .visual-word small { display: block; text-align: center; font: 10px var(--mono); letter-spacing: .15em; text-transform: uppercase; opacity: .78; }
+    .project-body { display: flex; flex: 1; flex-direction: column; padding: 22px 23px 21px; }
+    .project-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 12px; }
+    .project-type { color: var(--pink); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .11em; }
+    .project-index { color: #716b78; font: 11px var(--mono); }
+    h3 { margin: 0 0 9px; font-size: 21px; letter-spacing: -.045em; }
+    .project p { margin: 0; color: var(--muted); font-size: 13px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 22px; }
+    .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: #c8c1cf; font: 10px var(--mono); }
+    .project-link { display: inline-flex; align-items: center; gap: 9px; align-self: flex-start; margin-top: auto; color: var(--ink); text-decoration: none; font-size: 12px; font-weight: 800; }
+    .project-link span { color: var(--pink); font-size: 18px; transition: transform .2s; }
+    .project-link:hover span { transform: translate(3px,-3px); }
+    .demo-note { margin: 17px 0 0; color: #817b89; font-size: 11px; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; }
+    .about-copy { max-width: 650px; color: #c3bdc9; }
+    .about-copy p { margin: 0 0 15px; }
+    .skill-groups { display: grid; gap: 13px; }
+    .skill-row { display: grid; grid-template-columns: 125px 1fr; gap: 18px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .skill-row strong { color: var(--muted); font: 11px var(--mono); text-transform: uppercase; padding-top: 5px; }
+    .skill-row div { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-pill { padding: 7px 11px; border-radius: 8px; background: var(--panel-2); color: #e1dce5; font-size: 12px; }
+    .contact {
+      display: flex; align-items: center; justify-content: space-between; gap: 25px;
+      padding: 32px; border: 1px solid rgba(255,0,157,.3); border-radius: 18px;
+      background: radial-gradient(ellipse at 90% 0%, rgba(255,0,157,.12), transparent 55%), var(--panel);
+    }
+    .contact p { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px 0 38px; color: #77717e; font: 10px var(--mono); }
+    footer a { color: #aaa2b2; text-decoration: none; }
+    footer a:hover { color: var(--pink); }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .topbar { min-height: 70px; }
+      nav { gap: 14px; } nav a:not(.nav-github) { display: none; }
+      .hero { padding: 76px 0 66px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 18px; }
+      .hero-art { min-height: 230px; }
+      .orb { width: 195px; }
+      .orb-label { right: 3%; bottom: 0; }
+      .section { padding: 58px 0; }
+      .section-head { display: block; }
+      .section-note { margin-top: 13px; }
+      .projects { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 25px; }
+      footer { flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *:before, *:after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#inicio" aria-label="Nicolás Gómez, inicio">
+      <span class="brand-mark">NG</span><span>Nicolás Gómez</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#perfil">Perfil</a>
+      <a href="#contacto">Contacto</a>
+      <a class="nav-github" href="https://github.com/Nicrobio" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Portafolio · Desarrollo web</div>
+          <h1>Ideas que toman forma <span>en la web.</span></h1>
+          <p class="hero-copy">Soy Nicolás Gómez. Desarrollo sitios web e interfaces digitales, combinando diseño visual, estructura y código para crear experiencias claras, funcionales e interactivas.</p>
+          <div class="actions">
+            <a class="button primary" href="#proyectos">Explorar proyectos ↘</a>
+            <a class="button" href="https://github.com/Nicrobio" target="_blank" rel="noopener noreferrer">Ver mi GitHub ↗</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb"></div>
+          <div class="orb-label"><strong>Frontend & UI</strong>Diseño · Código · Interacción</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="section-kicker">01 / Trabajo seleccionado</p><h2>Proyectos destacados</h2></div>
+          <p class="section-note">Una selección de sitios publicados y experimentos web en los que he trabajado.</p>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <div class="project-visual visual-judicial"><div class="visual-word">GJTA<small>Grupo Judicial</small></div></div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-type">Sitio corporativo</span><span class="project-index">01</span></div>
+              <h3>Grupo Judicial Torres & Asociados</h3>
+              <p>Sitio institucional para una firma jurídica, con presentación de la organización, equipo de trabajo, servicios y canales de contacto.</p>
+              <div class="tags"><span class="tag">Web corporativa</span><span class="tag">Diseño UI</span><span class="tag">Servicios</span></div>
+              <a class="project-link" href="https://www.grupojudicialtorresyasociados.com" target="_blank" rel="noopener noreferrer">Visitar sitio web <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual visual-asoluxia"><div class="visual-word">ASOLUXIA<small>Evolución empresarial</small></div></div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-type">Web de consultoría</span><span class="project-index">02</span></div>
+              <h3>ASOLUXIA</h3>
+              <p>Experiencia web para una firma de consultoría empresarial, enfocada en comunicar su propuesta de valor, metodología y diagnóstico.</p>
+              <div class="tags"><span class="tag">Landing page</span><span class="tag">WordPress</span><span class="tag">Elementor</span></div>
+              <a class="project-link" href="https://asoluxia.com" target="_blank" rel="noopener noreferrer">Visitar sitio web <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual visual-petalos"><div class="visual-word">Pétalos<small>de Carne · Tickets</small></div></div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-type">Landing interactiva</span><span class="project-index">03</span></div>
+              <h3>Pétalos de Carne — Boletas</h3>
+              <p>Prototipo de preventa con una boleta animada, formulario con validación de datos y selección de método de pago.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Animación</span></div>
+              <a class="project-link" href="petalos-de-carne-tickets.html" target="_blank" rel="noopener noreferrer">Abrir proyecto <span>↗</span></a>
+              <small class="demo-note">El flujo de compra es demostrativo; no procesa pagos reales.</small>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-visual visual-tres"><div class="visual-word">tres en tres<small>Segunda edición</small></div></div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-type">Experiencia interactiva</span><span class="project-index">04</span></div>
+              <h3>tres en tres</h3>
+              <p>Cuestionario interactivo de 16 preguntas que recomienda un plan según las respuestas. Incluye firma en pantalla, controles táctiles y una visualización 3D.</p>
+              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Canvas</span><span class="tag">Three.js</span><span class="tag">Interacción</span></div>
+              <a class="project-link" href="tres-en-tres.html" target="_blank" rel="noopener noreferrer">Abrir proyecto <span>↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="perfil">
+      <div class="wrap about-grid">
+        <div><p class="section-kicker">02 / Perfil</p><h2>Diseño con intención. Código con propósito.</h2></div>
+        <div>
+          <div class="about-copy">
+            <p>Me interesa construir experiencias web que no se queden solo en lo visual: busco que cada interfaz tenga una estructura clara, responda bien en distintos dispositivos y haga sencillo el recorrido de quien la utiliza.</p>
+            <p>He trabajado tanto en páginas corporativas como en proyectos creativos con animaciones, formularios y componentes interactivos.</p>
+          </div>
+          <div class="skill-groups">
+            <div class="skill-row"><strong>Desarrollo</strong><div><span class="skill-pill">HTML</span><span class="skill-pill">CSS</span><span class="skill-pill">JavaScript</span></div></div>
+            <div class="skill-row"><strong>Web & UI</strong><div><span class="skill-pill">Diseño responsive</span><span class="skill-pill">WordPress</span><span class="skill-pill">Elementor</span></div></div>
+            <div class="skill-row"><strong>Interacción</strong><div><span class="skill-pill">Canvas</span><span class="skill-pill">Three.js</span><span class="skill-pill">Animaciones</span></div></div>
+            <div class="skill-row"><strong>Workflow</strong><div><span class="skill-pill">Git</span><span class="skill-pill">GitHub</span><span class="skill-pill">GitHub Pages</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="wrap contact">
+        <div><p class="section-kicker">03 / Contacto</p><h2>¿Hablamos de un proyecto?</h2><p>Puedes conocer más de mi trabajo y escribirme a través de GitHub.</p></div>
+        <a class="button primary" href="https://github.com/Nicrobio" target="_blank" rel="noopener noreferrer">Contactar en GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© 2026 Nicolás Gómez · Portafolio web</span>
+    <a href="https://github.com/Nicrobio/Nicrobio-Webs" target="_blank" rel="noopener noreferrer">Código fuente en GitHub ↗</a>
+  </footer>
+</body>
+</html>
