@@ -7,7 +7,7 @@
 #pdc .bp,#pdc .pt{border-radius:80% 0 80% 0}
 #pdc .bp{position:absolute;top:0;left:var(--x);width:var(--s);height:calc(var(--s)*1.3);background:radial-gradient(circle at 30% 30%,#d9404e,#7d1220);opacity:.5;filter:blur(var(--b));animation:fall var(--d) linear var(--dl) infinite;will-change:transform}
 #pdc .pt{position:fixed;z-index:60;pointer-events:none}
-#pdc :is(.hero,.float,.cap,.steps,.price,.info,.team,.foot){position:relative;z-index:1}
+#pdc :is(.hero,.float,.steps,.price,.info,.team,.foot){position:relative;z-index:1}
 #pdc .float{width:min(480px,100%);animation:bob 6s ease-in-out infinite}
 #pdc .float.ready{animation:tug 2.6s ease-in-out infinite}
 #pdc .tt{--w:480px;--h:270px;--s:140px;--bg:#f0e1c5;--fit:1;position:relative;width:100%;height:calc(var(--h)*var(--fit));user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;animation:enter 1.1s cubic-bezier(.2,1.25,.3,1) backwards}
@@ -26,14 +26,9 @@
 #pdc .tt.grab .stub .pp{cursor:grabbing}
 #pdc .tt.lock .stub .pp{cursor:pointer}
 #pdc .art{position:absolute;top:8px;left:8px;width:calc(var(--w) - var(--s) - 16px);height:calc(var(--h) - 16px);border-radius:8px;overflow:hidden;background:linear-gradient(160deg,#7a1c2b,#2b0d12)}
-#pdc .art img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .7s,transform 6s ease-out;-webkit-user-drag:none}
+#pdc .art img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .7s,transform 6s ease-out;-webkit-user-drag:none;object-position:50% 20%}
 #pdc .tt:hover .art img{transform:scale(1.06)}
 #pdc .tt.used .art img{filter:grayscale(1) brightness(.8)}
-#pdc .art:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0,rgba(240,225,197,.9) 36%,transparent 76%)}
-#pdc .c{position:absolute;left:26px;bottom:22px;width:calc(var(--w) - var(--s) - 52px);color:var(--ink);transition:opacity .5s}
-#pdc .tt.used .c{opacity:.6}
-#pdc .c h2{margin:0 0 7px;font:900 31px/.95 var(--serif);letter-spacing:-.01em}
-#pdc .c p{margin:0;font-size:12.5px;line-height:1.45;font-weight:500}
 #pdc .st{position:absolute;top:0;right:0;bottom:0;width:var(--s);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0 14px;text-align:center;color:var(--paper)}
 #pdc .st b{font:italic 600 19px var(--serif)}
 #pdc .st span{font-size:12px;opacity:.85}
@@ -41,9 +36,6 @@
 #pdc .st em{margin-top:10px;font-size:11.5px;font-style:normal;font-weight:700;color:#ffd9a0;animation:blink 1.8s ease-in-out infinite}
 #pdc .fb{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 #pdc .fb path{fill:none;stroke:#f0e1c5;stroke-linecap:round;opacity:0}
-#pdc .cap{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:0;background:none;color:var(--paper);font:italic 600 18px var(--serif);cursor:pointer}
-#pdc .cap.in{animation:rise .6s both}
-#pdc .cap:before{content:"";width:9px;height:9px;border-radius:50%;background:#ff5a68;animation:ping 1.6s infinite}
 #pdc .hero{max-width:640px;text-align:center;animation:rise .9s both}
 #pdc .pill{display:inline-flex;align-items:center;gap:9px;padding:6px 15px;border:1px solid rgba(240,225,197,.3);border-radius:99px;background:rgba(240,225,197,.08);font-size:12.5px;font-weight:700;letter-spacing:.05em}
 #pdc .pill:before{content:"";width:8px;height:8px;border-radius:50%;background:#ff5a68;animation:ping 1.6s infinite}
@@ -111,7 +103,7 @@
 #pdc .btn:hover:not(:disabled):after{transform:translateX(120%);transition:transform .7s}
 #pdc .btn:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
 #pdc .btn.go{animation:pulse 1.6s infinite}
-#pdc :is(input,select,.btn,.opt,.cap,.x):focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+#pdc :is(input,select,.btn,.opt,.x):focus-visible{outline:2px solid var(--rose);outline-offset:2px}
 #pdc .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
 #pdc .opt{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:112px;padding:14px;border:2px solid #e0cfa9;border-radius:16px;background:#fffaf0;color:var(--ink);font:700 16px var(--sans);cursor:pointer;transition:transform .25s cubic-bezier(.2,1.4,.4,1),border-color .2s,box-shadow .2s;animation:pop .6s cubic-bezier(.2,1.4,.4,1) both}
 #pdc .opt:nth-child(1){animation-delay:.25s}#pdc .opt:nth-child(2){animation-delay:.4s}
@@ -165,12 +157,7 @@
       <div class="stage">
         <div class="plane">
           <div class="pc body"><div class="pp">
-            <div class="art"><img src="https://drive.google.com/u/0/drive-viewer/AKGpihYaHN29vbxQSma1B2h0-gxFjXr1kZzh0mc-ycjEPkcWGOOHouqENIkJO5_Tb72Pa4khlFbC5o0SUxYmQFT9TLpDvrL51_NoUoQ=s1600-rw-v1?auditContext=forDisplay" alt="Pétalos de Carne" referrerpolicy="no-referrer"></div>
-            <div class="c">
-              <h2>Pétalos de Carne</h2>
-              <p>21 de noviembre, funciones 5:00 pm y 7:00 pm</p>
-              <p>Teatro, Cl. 12 #2-59, La Candelaria, Bogotá</p>
-            </div>
+            <div class="art"><img src="https://asoluxia.com/wp-content/uploads/2026/11/Poster-petalos.jpg" alt="Pétalos de Carne"></div>
           </div></div>
           <svg class="fb" aria-hidden="true"></svg>
           <div class="pc stub" role="button" aria-label="Rasgar el talón del ticket" tabindex="-1">
@@ -183,8 +170,6 @@
       </div>
     </div>
   </div>
-
-  <button class="cap" type="button">Toca la boleta para comprar</button>
   <ol class="steps" aria-label="Pasos de compra"><li><b>1</b>Datos</li><li><b>2</b>Rasga</li><li><b>3</b>Pago</li></ol>
 
   <div class="price">
@@ -260,7 +245,7 @@ for(let i=N;i>=0;i--)stub+=`L${p(x,B[i].y0)}`+(i?A(hr,0,x,B[i].y0-HS):'');
 stub+=`${A(NO,0,x+NO,0)}Z`;
 const ends=[{x,y:NO,v:NO},{x,y:H-NO,v:H-NO}];
 
-const pdc=$(''),root=$('.tt'),float=$('.float'),stage=$('.stage'),plane=$('.plane'),bodyEl=$('.body'),stubEl=$('.stub'),fb=$('.fb'),hint=$('.hint'),cap=$('.cap');
+const pdc=$(''),root=$('.tt'),float=$('.float'),stage=$('.stage'),plane=$('.plane'),bodyEl=$('.body'),stubEl=$('.stub'),fb=$('.fb'),hint=$('.hint');
 $('.body .pp').style.clipPath=`path('${body}')`;$('.stub .pp').style.clipPath=`path('${stub}')`;
 const F=B.map(()=>[0,1].map(()=>fb.appendChild(document.createElementNS('http://www.w3.org/2000/svg','path'))));
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -304,7 +289,7 @@ const paint=now=>{
 const finish=()=>{
   stubEl.style.visibility='hidden';used=true;st='pay';setStep(2);
   root.classList.remove('grab');root.classList.add('used');float.classList.remove('ready');
-  setCap('Elige cómo pagas');setTimeout(open,750);
+  setTimeout(open,750);
 };
 const step=now=>{
   const dt=clamp((now-s.last)/1000,.001,.034),e=k=>1-Math.exp(-dt/k);s.last=now;
@@ -390,7 +375,6 @@ new ResizeObserver(()=>root.style.setProperty('--fit',Math.min(1,root.clientWidt
 
 
 const ov=$('.ov'),modal=$('.modal'),f=$('form'),secs=$$('.sec'),opts=$$('.opt'),ok=$('[data-s=pay] .btn'),d={},money='$40.000';
-const setCap=t=>{cap.textContent=t;cap.classList.remove('in');void cap.offsetWidth;cap.classList.add('in')};
 function open(){
   if(st==='tear')return;
   const cur=st==='form'?'form':st==='pay'?'pay':'done';
@@ -402,7 +386,6 @@ function open(){
 function close(){ov.classList.remove('show');setTimeout(()=>{if(!ov.classList.contains('show'))ov.hidden=true},400)}
 root.addEventListener('click',()=>{if(st==='form')open()});
 root.addEventListener('keydown',e=>{if(e.target===root&&st==='form'&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open()}});
-cap.addEventListener('click',open);
 $('.buy').addEventListener('click',open);
 const stepLis=$$('.steps li');
 const setStep=n=>stepLis.forEach((l,i)=>{l.className=i<n?'dn':i===n?'on':'';l.firstElementChild.textContent=i<n?'✓':i+1});
@@ -431,7 +414,6 @@ f.addEventListener('submit',e=>{
   root.classList.remove('lock');root.classList.add('unlock');root.removeAttribute('tabindex');root.removeAttribute('role');
   stubEl.tabIndex=0;hint.textContent='Arrástame para rasgar';
   float.classList.add('ready');setTimeout(()=>root.classList.remove('unlock'),900);
-  setCap(`Listo, ${d.name.split(' ')[0]}. Arrastra el talón para rasgarlo`);
 });
 opts.forEach(o=>o.addEventListener('click',()=>{
   opts.forEach(k=>k.classList.toggle('sel',k===o));d.m=o.dataset.m;ok.disabled=false;ok.classList.add('go');
@@ -449,7 +431,6 @@ ok.addEventListener('click',()=>{
   });
   scramble(dn.querySelector('.id'),id);
   setTimeout(burst,350);
-  setCap('¡Nos vemos el 21 de noviembre!');
 });
 })();
 </script>
