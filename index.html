@@ -83,8 +83,9 @@
       transition: transform .25s, border-color .25s, background .25s;
     }
     .project:hover { transform: translateY(-5px); border-color: rgba(255,0,157,.38); background: linear-gradient(145deg, rgba(255,0,157,.065), rgba(255,255,255,.015)); }
-    .visual-guapa { background: linear-gradient(130deg,#2b1a20,#7a2c49); }
-    .visual-guapa:before { background: #e07a9f; }
+    .visual-guapa { background: linear-gradient(130deg,#fbd9e3,#f2a9c4); }
+    .visual-guapa:before { background: #fff; opacity: .55; }
+    .visual-guapa .visual-word { color: #5a1d38; text-shadow: 0 2px 14px rgba(255,255,255,.5); }
     .project.wide { grid-column: 1 / -1; flex-direction: row; min-height: 0; }
     .project.wide .project-visual { flex: 0 0 36%; height: auto; min-height: 220px; border-bottom: 0; border-right: 1px solid var(--line); }
     .project-visual { position: relative; height: 148px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--line); }
@@ -95,8 +96,10 @@
     .visual-asoluxia:before { background: var(--pink); }
     .visual-petalos { background: linear-gradient(130deg,#1c080e,#661b2a); }
     .visual-petalos:before { background: #db435d; }
-    .visual-cassettes { background: linear-gradient(130deg,#120b2e,#3a1166); }
-    .visual-cassettes:before { background: #22e4ff; }
+    .visual-cassettes { background: linear-gradient(130deg,#1b0d3f,#5b2bb8); }
+    .visual-cassettes:before { background: #b07cff; opacity: .5; }
+    .visual-cassettes .visual-word { font-size: clamp(24px, 3.4vw, 34px); letter-spacing: -.06em; text-align: center; line-height: 1.1; }
+    .project-purple .project-type { color: var(--lilac); }
     .visual-word { position: relative; z-index: 1; font-size: clamp(27px, 4vw, 43px); font-weight: 800; letter-spacing: -.08em; text-shadow: 0 4px 25px rgba(0,0,0,.4); }
     .visual-word small { display: block; text-align: center; font: 10px var(--mono); letter-spacing: .15em; text-transform: uppercase; opacity: .78; }
     .project-body { display: flex; flex: 1; flex-direction: column; padding: 22px 23px 21px; }
@@ -225,8 +228,8 @@
             </div>
           </article>
 
-          <article class="project">
-            <div class="project-visual visual-cassettes"><div class="visual-word">Cassettes<small>Nicrobio</small></div></div>
+          <article class="project project-purple">
+            <div class="project-visual visual-cassettes"><div class="visual-word">Cassettes Nicrobio<small>Música hecha a mano</small></div></div>
             <div class="project-body">
               <div class="project-top"><span class="project-type">Tienda conceptual</span><span class="project-index">04</span></div>
               <h3>Cassettes Nicrobio</h3>
