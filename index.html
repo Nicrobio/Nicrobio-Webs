@@ -83,6 +83,10 @@
       transition: transform .25s, border-color .25s, background .25s;
     }
     .project:hover { transform: translateY(-5px); border-color: rgba(255,0,157,.38); background: linear-gradient(145deg, rgba(255,0,157,.065), rgba(255,255,255,.015)); }
+    .visual-guapa { background: linear-gradient(130deg,#2b1a20,#7a2c49); }
+    .visual-guapa:before { background: #e07a9f; }
+    .project.wide { grid-column: 1 / -1; flex-direction: row; min-height: 0; }
+    .project.wide .project-visual { flex: 0 0 36%; height: auto; min-height: 220px; border-bottom: 0; border-right: 1px solid var(--line); }
     .project-visual { position: relative; height: 148px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--line); }
     .project-visual:before { content: ""; position: absolute; width: 240px; height: 160px; border-radius: 50%; filter: blur(34px); opacity: .38; }
     .visual-judicial { background: linear-gradient(130deg,#171b26,#252b3b); }
@@ -137,6 +141,8 @@
       .section-head { display: block; }
       .section-note { margin-top: 13px; }
       .projects { grid-template-columns: 1fr; }
+      .project.wide { flex-direction: column; }
+      .project.wide .project-visual { flex: none; height: 148px; min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .about-grid { grid-template-columns: 1fr; gap: 24px; }
       .contact { align-items: flex-start; flex-direction: column; padding: 25px; }
       footer { flex-direction: column; gap: 8px; }
@@ -228,6 +234,17 @@
               <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">Spotify</span><span class="tag">Carrito</span></div>
               <a class="project-link" href="cassettes_nicrobio.html" target="_blank" rel="noopener noreferrer">Abrir proyecto <span>↗</span></a>
               <small class="demo-note">Proyecto conceptual; no procesa pagos reales.</small>
+            </div>
+          </article>
+
+          <article class="project wide">
+            <div class="project-visual visual-guapa"><div class="visual-word">GGuapa<small>Maquillaje · Colombia</small></div></div>
+            <div class="project-body">
+              <div class="project-top"><span class="project-type">Tienda de maquillaje</span><span class="project-index">05</span></div>
+              <h3>GGuapa — Maquillaje al detal y por mayor</h3>
+              <p>Página para una marca de maquillaje con categorías (accesorios, labios, sombras, cuidado facial), productos destacados, kits y pedidos por WhatsApp, con una sección 3D interactiva hecha con Three.js.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">E-commerce</span></div>
+              <a class="project-link" href="glam-guapa.html" target="_blank" rel="noopener noreferrer">Abrir proyecto <span>↗</span></a>
             </div>
           </article>
         </div>
